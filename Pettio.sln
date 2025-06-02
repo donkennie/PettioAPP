@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pettio.API", "Pettio.API\Pettio.API.csproj", "{33CC4A03-1270-4FCC-92FB-1E39FDC8C82B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pettio.Shared", "Pettio.Shared\Pettio.Shared.csproj", "{B7D37AB7-4FB3-4755-874A-876BD10CED17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pettio.Mobile", "Pettio.Mobile\Pettio.Mobile.csproj", "{7C1FFADF-C3F2-4A3B-99C7-D14B8FCD1652}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33CC4A03-1270-4FCC-92FB-1E39FDC8C82B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33CC4A03-1270-4FCC-92FB-1E39FDC8C82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33CC4A03-1270-4FCC-92FB-1E39FDC8C82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33CC4A03-1270-4FCC-92FB-1E39FDC8C82B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D37AB7-4FB3-4755-874A-876BD10CED17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D37AB7-4FB3-4755-874A-876BD10CED17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D37AB7-4FB3-4755-874A-876BD10CED17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D37AB7-4FB3-4755-874A-876BD10CED17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1FFADF-C3F2-4A3B-99C7-D14B8FCD1652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C1FFADF-C3F2-4A3B-99C7-D14B8FCD1652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C1FFADF-C3F2-4A3B-99C7-D14B8FCD1652}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7C1FFADF-C3F2-4A3B-99C7-D14B8FCD1652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C1FFADF-C3F2-4A3B-99C7-D14B8FCD1652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1FFADF-C3F2-4A3B-99C7-D14B8FCD1652}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
