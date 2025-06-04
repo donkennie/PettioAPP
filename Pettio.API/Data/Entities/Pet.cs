@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Pettio.Shared.Enumerations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pettio.API.Data.Entities
@@ -30,7 +31,7 @@ namespace Pettio.API.Data.Entities
 
         public int Views { get; set; }
 
-        public AdoptionStatus AdoptionStatus { get; set; }
+        public PettioStatus AdoptionStatus { get; set; }
 
         public bool IsActive { get; set; }
     }

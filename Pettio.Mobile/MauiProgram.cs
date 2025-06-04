@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.Hosting;
+using Pettio.Mobile;
 
-namespace Pettio.Mobile
+namespace PetAdoption.Mobile
 {
     public static class MauiProgram
     {
@@ -13,9 +12,10 @@ namespace Pettio.Mobile
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                    fonts.AddFont("Ubuntu-Regular.ttf", "UbuntuRegular");
+                    fonts.AddFont("Ubuntu-Bold.ttf", "UbuntuBold");
+                })
+                .UseMauiCommunityToolkit();
 
 #if DEBUG
             builder.Logging.AddDebug();

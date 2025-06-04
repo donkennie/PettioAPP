@@ -3,13 +3,62 @@
     x:Class="Pettio.Mobile.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Pettio.Mobile"
-    Shell.FlyoutBehavior="Disabled"
-    Title="Pettio.Mobile">
+    xmlns:local="clr-namespace:PetAdoption.Mobile"
+    xmlns:pages="clr-namespace:Pettio.Mobile.Pages"
+    Shell.FlyoutBehavior="Flyout">
+
+    <Shell.FlyoutHeader>
+        <Grid Padding="25" BackgroundColor="{StaticResource Primary}">
+            <Label
+                FontSize="50"
+                HorizontalTextAlignment="Center"
+                Text="Pet Adoption App"
+                TextColor="White" />
+        </Grid>
+    </Shell.FlyoutHeader>
 
     <ShellContent
-        Title="Home"
+        Title="Main"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"
+        Shell.FlyoutItemIsVisible="False"
+        Shell.NavBarIsVisible="False"
+        Shell.TabBarIsVisible="False" />
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:HomePage}"
+            Icon="home"
+            Route="HomePage" />
+        <ShellContent
+            Title="All Pets"
+            ContentTemplate="{DataTemplate pages:AllPetsPage}"
+            Icon="list"
+            Route="AllPetsPage" />
+        <ShellContent
+            Title="Favorites"
+            ContentTemplate="{DataTemplate pages:FavoritesPage}"
+            Icon="heart"
+            Route="FavoritesPage" />
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate pages:ProfilePage}"
+            Icon="user"
+            Route="ProfilePage" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="10" BackgroundColor="{StaticResource Primary}">
+            <Label
+                FontSize="15"
+                HorizontalOptions="Center"
+                Text="Created by Abhay Prince"
+                TextColor="White" />
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
+        </Grid>
+    </Shell.FlyoutFooter>
 
 </Shell>
