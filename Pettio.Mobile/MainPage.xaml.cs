@@ -1,4 +1,6 @@
-﻿namespace Pettio.Mobile
+﻿using Microsoft.Maui.Controls;
+
+namespace Pettio.Mobile
 {
     public partial class MainPage : ContentPage
     {

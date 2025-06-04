@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Pettio.API.Data;
+using Pettio.API.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,11 +11,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<PetContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
+
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    ApplyDbMigrations(app.Services);
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -22,4 +31,14 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapHub<PetHub>("/hubs/pet-hub");
+
 app.Run();
+
+static void ApplyDbMigrations(IServiceProvider serviceProvider)
+{
+    using var scope = serviceProvider.CreateScope();
+    var context = scope.ServiceProvider.GetRequiredService<PetContext>();
+    if (context.Database.GetPendingMigrations().Any())
+        context.Database.Migrate();
+}
