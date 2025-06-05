@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace Pettio.Mobile
+﻿namespace Pettio.Mobile
 {
     public partial class AppShell : Shell
     {
@@ -8,5 +6,7 @@ namespace Pettio.Mobile
         {
             InitializeComponent();
         }
+
+        private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e) => await Launcher.OpenAsync("https://www.youtube.com/@abhayprince");
     }
 }
